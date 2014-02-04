@@ -1,0 +1,16 @@
+from ConnectionCapture import *
+
+
+def getCapture():
+	captureSrcFile = open('test_capture','r');
+	captureMetaFile = open('test_capture_head','r');
+	headers = []
+	connections = []
+	for header in captureMetaFile:
+		headers.append(header.trim())
+	for capture in captureSrcFile:
+		values = capture.split(',')
+		connection = ConnectionCapture(headers, values)
+		connections.append(connection)
+	return connections
+
