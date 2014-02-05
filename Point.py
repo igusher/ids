@@ -5,7 +5,10 @@ class Point:
 		keys = list(connCapture.features.keys())
 		for key in keys:
 			self.vector.append(connCapture.features[key].__abs__())
-	
+		self.id = connCapture.id
+
+	def getId(self):
+		return self.id
 	
 
 			
