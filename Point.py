@@ -4,6 +4,8 @@ class Point:
 		self.vector = []
 		keys = list(connCapture.features.keys())
 		for key in keys:
+			if "attack_type" in key:
+				continue;
 			self.vector.append(connCapture.features[key].__abs__())
 		self.id = connCapture.id
 

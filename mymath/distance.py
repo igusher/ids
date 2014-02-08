@@ -1,4 +1,6 @@
 from math import *
+from covariance import *
+from numpy import matrix
 
 def check(v1,v2):
 	if len(v1) != len(v2):
@@ -14,7 +16,12 @@ def euclideanDistance(v1, v2):
 
 def mahalanobisDistance(v1,v2):
 	check(v1,v2)
-	pass
+	d = 0
+	for i in range(len(v1)):
+		vectorDiff = matrix(v1) - matrix(v2)
+		d += vectorDiff.T * Covariance.covMatrix.I * vectorDiff
+	d = sqrt(d)
+	return d
 	
 def cosineDistance(v1,v2):
 	check(v1,v2)

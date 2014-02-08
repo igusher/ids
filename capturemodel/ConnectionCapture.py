@@ -2,7 +2,7 @@ from DiscreteValue import DiscreteValue
 
 class ConnectionCapture:
 	captureHeaders = {}
-	def __init__(self, metrics, values, id):
+	def __init__(self, metrics, values, id):	
 		self.id = id
 		self.features = {}
 		if len(metrics) != len(values):
