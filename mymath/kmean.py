@@ -7,8 +7,8 @@ class Kmean:
 		self.distanceFunc = distanceFunc
 		self.clusters = {}
 		for k in list(testpoints.keys()):
-			#newCluster = Cluster(testpoints[k])
-			newCluster = ClusterNonEucl(testpoints[k])
+			newCluster = Cluster(testpoints[k])
+			#newCluster = ClusterNonEucl(testpoints[k])
 			self.clusters[k] = newCluster
 
 	def findClosestCluster(self, point):
